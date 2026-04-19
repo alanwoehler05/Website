@@ -1454,7 +1454,10 @@ footer {
   .hero-actions .btn-ghost { width: 100%; text-align: center; justify-content: center; }
   .hero-sub { font-size: 1rem; }
   .hero-left { z-index: 4; }
-  .social-strip-item { color: var(--muted) !important; }
+  .social-strip { justify-content: center; }
+  .social-strip .social-strip-sep:last-of-type { display: none; }
+  .social-strip .social-strip-item:last-child { flex-basis: 100%; text-align: center; margin-top: 0.2rem; }
+  .social-strip-item { color: var(--muted) !important; font-size: 0.72rem; }
   .stats { margin-top: 2rem; }
 
   /* ── So funktioniert's label ── */
@@ -2073,7 +2076,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
   const ctx = canvas.getContext('2d');
 
   const STAR_COUNT = 350;
-  const SPEED = 0.4;         // base speed — gemächlich
+  const SPEED = window.innerWidth <= 768 ? 0.32 : 0.4;  // mobile: 4/5 speed
   const MAX_DEPTH = 1500;
   const STREAK_LENGTH = 0.012; // motion blur multiplier
 
