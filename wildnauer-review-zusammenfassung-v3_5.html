@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Zusammenfassung – Therapiezentrum Wildnauer</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-dark:  #1A4A7A;
+    --blue-mid:   #2563A8;
+    --blue-light: #3B82C4;
+    --blue-pale:  #E8F1FA;
+    --blue-ultra: #F0F6FF;
+    --white:      #FFFFFF;
+    --gold:       #D4A843;
+    --gold-light: #F0CC70;
+    --red:        #C0392B;
+    --red-pale:   #FDF0EE;
+    --text-dark:  #1A2A3A;
+    --text-mid:   #3A4A5A;
+    --text-light: #6A7A8A;
+    --border:     #C8DCF0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--blue-ultra);
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+    padding: 52px 40px 46px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: -50px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .logo-wrap { margin-bottom: 20px; }
+  .logo-wrap img {
+    height: 46px;
+  }
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .header h1 {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .header-sub {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+  }
+  .header-line {
+    width: 36px;
+    height: 2px;
+    background: var(--gold);
+    margin: 18px auto 0;
+    border-radius: 2px;
+  }
+  .stats-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 26px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Lora', serif;
+    font-size: 34px;
+    color: var(--blue-mid);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 52px 36px 80px;
+  }
+  .praise-intro {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+    border-radius: 16px;
+    padding: 34px 38px;
+    color: #fff;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .praise-intro::after {
+    content: '\275D';
+    position: absolute;
+    right: 28px; top: 14px;
+    font-size: 90px;
+    opacity: 0.07;
+    line-height: 1;
+    color: #fff;
+    font-family: 'Lora', serif;
+  }
+  .intro-label {
+    font-size: 10.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .praise-intro p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    font-weight: 300;
+    opacity: 0.93;
+  }
+  .praise-intro strong { color: var(--gold-light); font-weight: 600; }
+  .section-label {
+    font-size: 10.5px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .quote-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 13px;
+  }
+  .quote-card.has-name { border-top: 3px solid var(--blue-light); }
+  .therapist-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--blue-pale);
+    color: var(--blue-dark);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    margin-bottom: 13px;
+  }
+  .quote-text {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.78;
+    margin-bottom: 16px;
+  }
+  .quote-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .quote-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--blue-mid);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+  .quote-name { font-size: 13px; color: var(--text-dark); font-weight: 600; }
+  .quote-context { font-size: 11.5px; color: var(--text-light); margin-top: 1px; }
+  .stars { margin-left: auto; color: var(--gold); font-size: 13px; letter-spacing: 1px; }
+  .divider {
+    border: none;
+    border-top: 1.5px solid var(--border);
+    margin: 52px 0;
+  }
+  .improve-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .improve-icon {
+    width: 42px; height: 42px;
+    border-radius: 11px;
+    background: var(--red-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    flex-shrink: 0;
+  }
+  .improve-title { font-family: 'Lora', serif; font-size: 20px; color: var(--text-dark); }
+  .improve-subtitle { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+  .improve-intro {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--red);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 26px;
+  }
+  .improve-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+  }
+  .improve-num {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: var(--red-pale);
+    border: 1.5px solid rgba(192,57,43,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--red);
+    flex-shrink: 0;
+    font-family: 'Lora', serif;
+  }
+  .improve-content h4 { font-size: 14px; font-weight: 600; color: var(--text-dark); margin-bottom: 5px; }
+  .improve-content p { font-size: 13.5px; color: var(--text-mid); line-height: 1.65; }
+  .source-quote {
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--text-light);
+    margin-top: 8px;
+    border-left: 2px solid var(--border);
+    padding-left: 10px;
+    font-family: 'Lora', serif;
+  }
+  .improve-tag {
+    font-style: normal;
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--red);
+    font-size: 11px;
+    background: var(--red-pale);
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 7px;
+    font-weight: 600;
+  }
+  .report-footer {
+    margin-top: 52px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-brand { font-size: 12px; color: var(--text-light); }
+  .footer-brand span { font-weight: 600; color: var(--blue-mid); }
+  .footer-date { font-size: 12px; color: var(--text-light); }
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 28px 0 40px;
+  }
+  .highlight-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--blue-mid);
+    border-radius: 0 12px 12px 0;
+    padding: 22px 22px 20px;
+  }
+  .highlight-card-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .highlight-card p {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+  .highlight-card p em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--text-dark);
+  }
+  @media (max-width: 600px) {
+    .highlight-grid { grid-template-columns: 1fr; }
+  }
+    .stats-bar { gap: 28px; padding: 22px 20px; }
+    .main { padding: 36px 18px 60px; }
+    .praise-intro { padding: 26px 22px; }
+    .header { padding: 42px 22px 36px; }
+    .quote-card { padding: 20px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo-wrap">
+    <img src="data:image/png;base64,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" alt="Therapiezentrum Wildnauer">
+  </div>
+  <div class="header-label">Review-Auswertung · Mai 2026</div>
+  <h1>Was eure Patienten über euch sagen</h1>
+  <div class="header-sub">Oberschleißheim · Google Bewertungen</div>
+  <div class="header-line"></div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">68</div>
+    <div class="stat-label">Bewertungen analysiert</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4,9</div>
+    <div class="stat-label">Ø Sternebewertung</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">94%</div>
+    <div class="stat-label">5-Sterne-Bewertungen</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="praise-intro">
+    <div class="intro-label">Zusammenfassung</div>
+    <p>
+      Eure Patienten schreiben keine kurzen Bewertungen – sie schreiben über <strong>Vertrauen, das über Jahre gewachsen ist.</strong> Über Schmerzen, die endlich besser wurden. Über Kinder, die sich auf ihre Termine freuen. Über Menschen, die nach langer Suche endlich die richtige Praxis gefunden haben. Die 10 Stimmen unten stehen stellvertretend für euch alle.
+    </p>
+  </div>
+
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <div class="highlight-card-title">🤝 Menschlichkeit trifft Fachkompetenz</div>
+      <p>Immer wieder schreiben Patienten, dass sie sich <em>„wirklich ernst genommen"</em> fühlen. Nicht nur behandelt – sondern gesehen. Das ist selten, und das wissen Ihre Patienten.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-title">🏆 Langfristige Erfolge, die bleiben</div>
+      <p>Ob Kreuzbandriss ohne OP, Schulterschmerzen nach Jahren, Bandscheibe, Schlaganfall: Patienten berichten von echter Besserung – nicht nur kurzfristiger Linderung.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-title">📅 Terminvergabe, die funktioniert</div>
+      <p>Schnelle Termine und flexibles Umbuchen werden auffallend häufig gelobt. Für eine gut besuchte Praxis Ihrer Größe ist das keine Selbstverständlichkeit.</p>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-title">🔗 Teamwork, das man spürt</div>
+      <p>Mehrere Patienten heben hervor, dass Ergo, Physio und andere Bereiche eng zusammenarbeiten. Diese Vernetzung ist für Patienten spürbar und ein klares Alleinstellungsmerkmal.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Die 10 berührendsten Bewertungen</div>
+
+  <div class="quote-card has-name">
+    <div class="therapist-badge">👤 Therapeut erwähnt: Saimir</div>
+    <div class="quote-text">„Ich hatte einen Schlaganfall, konnte kaum gehen und sprechen und werde nach jeder Behandlung nun besser. Zu meinem persönlichen Betreuer Herrn Saimir habe ich ein ausgezeichnetes Bezug und ein enges Vertrauen aufbauen können. Dank!"</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">NL</div>
+      <div>
+        <div class="quote-name">Niki Loutchev</div>
+        <div class="quote-context">Schlaganfall-Patient</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card has-name">
+    <div class="therapist-badge">👤 Therapeut erwähnt: Lehel</div>
+    <div class="quote-text">„Ich bin seit über einem Jahr in Behandlung und fühle mich in der Praxis sehr wohl. Alle Therapeuten, die ich bisher kennengelernt habe, waren sehr engagiert. Ein spezielles Dankeschön geht jedoch an Lehel für seine unermüdlichen Mühen. Auch an der Rezeption wird man jederzeit freundlich empfangen und kurzfristige Terminverschiebungen waren bisher nie ein Problem."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">TS</div>
+      <div>
+        <div class="quote-name">Tanja Stadtelmeyer</div>
+        <div class="quote-context">Langzeitpatientin</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card has-name">
+    <div class="therapist-badge">👤 Therapeut erwähnt: Adam</div>
+    <div class="quote-text">„Ich freue mich, dass wir das Therapiezentrum Wildnauer im Ort haben. Die angebotenen Kurse sind vielfältig und von Fachpersonal betreut, die Räumlichkeiten sauber, das komplette Team an der Rezeption kompetent, freundlich und hilfsbereit – und mein Highlight sind die regelmäßigen Massagen von Adam, der immer auf meine Problemzonen eingeht. 1000 Dank."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">SS</div>
+      <div>
+        <div class="quote-name">Susanne Stiller</div>
+        <div class="quote-context">Stammkundin</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card has-name">
+    <div class="therapist-badge">👤 Therapeutinnen erwähnt: Steffi & Lucie</div>
+    <div class="quote-text">„Super tolle Praxis. Sehr gute Ergotherapie (Danke Steffi), unglaublich fachlich kompetente Physiotherapeutin (Lucie) – super nette kompetente Podologin."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">ID</div>
+      <div>
+        <div class="quote-name">Iman Dawoud</div>
+        <div class="quote-context">Ergo-, Physio- & Podologie-Patientin</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card has-name">
+    <div class="therapist-badge">👤 Therapeutin erwähnt: Frau Laudien</div>
+    <div class="quote-text">„Die Praxis Wildnauer unterstützt meinen autistischen Sohn mit Ergo im Sehbehindertenzentrum ambulant. Ich bin sehr froh und dankbar, dass dies zur HPT-Zeit möglich ist. Frau Laudien hat viel Geduld mit ihm und wir haben uns oft ausgetauscht, um ihn bestmöglich zu unterstützen. Mittlerweile läuft es gut und er hat sich daran gewöhnt."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">8B</div>
+      <div>
+        <div class="quote-name">85er Baujahr</div>
+        <div class="quote-context">Mutter eines autistischen Sohnes</div>
+      </div>
+      <div class="stars">★★★★☆</div>
+    </div>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">„Nach einer langen Odyssee durch zahlreiche Physiotherapie-Praxen bin ich nun endlich hier gelandet. Es stimmt von vorne bis hinten einfach alles. Obwohl ich mittlerweile gar nicht mehr in Oberschleißheim wohne, fahre ich noch immer zur Physiotherapie ins Therapiezentrum Wildnauer. Ein großer Gewinn für meine Lebensqualität."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">NK</div>
+      <div>
+        <div class="quote-name">N. Kalaja</div>
+        <div class="quote-context">Chronische Schmerzerkrankung</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">„Obwohl ich an einer sehr seltenen Autoimmunerkrankung leide, die teilweise mit Lähmungserscheinungen und spontanen Entzündungen einhergeht, finden die Therapeutinnen und Therapeuten immer sehr empathisch die richtigen Übungen für mich. Das Team ist immer gewillt, sich auch über kompliziertere Erkrankungen zu informieren und den besten Behandlungsweg für uns Patienten zu finden. Menschlich und fachlich wirklich top!"</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">D</div>
+      <div>
+        <div class="quote-name">Daniela</div>
+        <div class="quote-context">Seltene Autoimmunerkrankung</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">„Ganz klar eine 5 Sterne. Ich finde es faszinierend wie ihr Medizin, Sport und Physio verknüpft! Viele eurer Übungen hab ich in mein Training integriert. Es gibt viele in der Branche, die verordnen nur Massagen – aber das ist ja keine Hilfe zur Selbsthilfe."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">KL</div>
+      <div>
+        <div class="quote-name">Karlo Ljubanovic</div>
+        <div class="quote-context">Patient & aktiver Sportler</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">„Sehr freundliches Personal am Empfang, versuchen immer auf Terminwünsche einzugehen. Therapeuten sowohl in Ergo, Physio und KGG sind alle sehr kompetent und freundlich. Ich fühl mich wohl und vor allem fühl ich mich mobiler – obwohl ich unsportlich bin, macht es doch inzwischen Spaß hinzugehen. Letztendlich hab ich den Eindruck, dass sich das Personal untereinander auch gut versteht und sie arbeiten Hand in Hand."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">PS</div>
+      <div>
+        <div class="quote-name">Petra Speer</div>
+        <div class="quote-context">Patientin in Ergo, Physio & KGG</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">„Ich war wegen einer Rotatorenmanschettenruptur längere Zeit in Behandlung. Angefangen bei der Terminvereinbarung über die therapeutische Behandlung, Physiotherapie mit langsamem Muskel-Wiederaufbau und die Wiederherstellung der Beweglichkeit waren alle Mitarbeiterinnen und Therapeuten stets sehr freundlich und engagiert. Die Behandlung war für mich erfolgreich! Ich kann die Praxis sehr empfehlen."</div>
+    <div class="quote-meta">
+      <div class="quote-avatar">WF</div>
+      <div>
+        <div class="quote-name">Wolfgang F.</div>
+        <div class="quote-context">Rotatorenmanschettenruptur</div>
+      </div>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="improve-header">
+    <div class="improve-icon">🔧</div>
+    <div>
+      <div class="improve-title">Verbesserungspotenzial</div>
+      <div class="improve-subtitle">Ehrliches Feedback von Patienten, die eure Praxis schätzen</div>
+    </div>
+  </div>
+
+  <div class="improve-intro">
+    Fast alle kritischen Punkte kommen von Patienten, die gleichzeitig betonen, wie gut die therapeutische Arbeit ist. Sie kritisieren nicht die Praxis – sie wollen, dass eine Praxis, der sie vertrauen, in Kleinigkeiten noch besser wird.
+  </div>
+
+  <div class="improve-item">
+    <div class="improve-num">1</div>
+    <div class="improve-content">
+      <h4>Terminplanung & Kommunikation</h4>
+      <p>Einzelne Patienten berichten von kurzfristigen Terminänderungen, die nicht transparent kommuniziert wurden – zum Beispiel Zettel ohne Rücksprache, oder Termine zu ungünstigen Zeiten ohne vorherige Absprache. Darüber hinaus erwähnen einige Patienten, dass es generell schwierig war, überhaupt einen freien Termin zu bekommen.</p>
+      <div class="source-quote">„Leider musste ich für Termine direkt ins Therapiezentrum fahren, da ich telefonisch niemanden erreichen konnte." – 19Sunshine83</div>
+    </div>
+  </div>
+
+  <div class="improve-item">
+    <div class="improve-num">2</div>
+    <div class="improve-content">
+      <h4>Telefonische Erreichbarkeit</h4>
+      <p>Mehrere Patienten hatten Schwierigkeiten, die Praxis telefonisch zu erreichen. Das führt zu unnötigem Aufwand und hinterlässt einen negativen ersten Eindruck – auch bei ansonsten sehr zufriedenen Patienten.</p>
+      <div class="source-quote">„Bei Regen oder Schnee ist der Fußgänger-Zugang nicht gut gehbar." – Franca Tabarelli</div>
+    </div>
+  </div>
+
+  <div class="improve-item">
+    <div class="improve-num">3</div>
+    <div class="improve-content">
+      <h4>Parkplätze & Außenzugang</h4>
+      <p>Die Parkplatzsituation wird als eng beschrieben. Bei schlechtem Wetter ist der Fußgängerzugang schwer begehbar. Beides betrifft besonders Patienten mit eingeschränkter Mobilität.</p>
+    </div>
+  </div>
+
+  <div class="improve-item">
+    <div class="improve-num">4</div>
+    <div class="improve-content">
+      <h4>Wechselnde Therapeuten & fehlende Übergabe</h4>
+      <p>Einige Patienten berichten, dass sie regelmäßig mit unterschiedlichen Therapeuten arbeiten und dabei jedes Mal ihre Krankengeschichte und Beschwerden neu erklären müssen. Das kostet Zeit, unterbricht den Behandlungsfortschritt und hinterlässt das Gefühl, nicht wirklich bekannt zu sein.</p>
+    </div>
+  </div>
+
+  <div class="report-footer">
+    <div class="footer-brand">Report erstellt von <span>ReviewRocket</span></div>
+    <div class="footer-date">Mai 2026 · Therapiezentrum Wildnauer GmbH</div>
+  </div>
+
+</div>
+</body>
+</html>
