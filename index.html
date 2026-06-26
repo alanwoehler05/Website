@@ -1200,7 +1200,7 @@ footer {
 
 @media (max-width: 768px) {
   nav .btn-nav-cta { font-size: 0.72rem !important; padding: 0.5rem 1.1rem !important; }
-  .hero { padding: 5.5rem 6.6% 2rem; justify-content: flex-start; }
+  .hero { padding: 7rem 6.6% 2rem; justify-content: flex-start; }
   .hero-tag { font-size: 0.62rem; }
   .hero h1 { font-size: 2.6rem; }
   .hero-sub { font-size: 1rem; }
@@ -1208,7 +1208,11 @@ footer {
   .hero-actions { justify-content: center; flex-direction: column; }
   .hero-actions .btn-primary,
   .hero-actions .btn-ghost { width: 100%; text-align: center; justify-content: center; }
-  .stats { margin-top: 2rem; }
+  .stats { margin-top: 2rem; grid-template-columns: repeat(3, 1fr); }
+  .stat { border-right: 1px solid var(--border); border-bottom: none; padding: 0.9rem 0.4rem; }
+  .stat:last-child { border-right: none; border-bottom: none; }
+  .stat-num { font-size: 1.6rem; }
+  .stat-label { font-size: 0.6rem; letter-spacing: 0.04em; }
   .social-strip { justify-content: center; }
   .social-strip .social-strip-sep:last-of-type { display: none; }
   .social-strip .social-strip-item:last-child { flex-basis: 100%; text-align: center; margin-top: 0.2rem; }
