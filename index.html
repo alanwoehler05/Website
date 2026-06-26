@@ -1197,6 +1197,28 @@ footer {
 @media (max-width: 900px) {
   .cs-cards { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 }
+
+@media (max-width: 768px) {
+  nav .btn-nav-cta { font-size: 0.72rem !important; padding: 0.5rem 1.1rem !important; }
+  .hero { padding: 5.5rem 6.6% 2rem; justify-content: flex-start; }
+  .hero-tag { font-size: 0.62rem; }
+  .hero h1 { font-size: 2.6rem; }
+  .hero-sub { font-size: 1rem; }
+  .hero-left { z-index: 4; }
+  .hero-actions { justify-content: center; flex-direction: column; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { width: 100%; text-align: center; justify-content: center; }
+  .stats { margin-top: 2rem; }
+  .social-strip { justify-content: center; }
+  .social-strip .social-strip-sep:last-of-type { display: none; }
+  .social-strip .social-strip-item:last-child { flex-basis: 100%; text-align: center; margin-top: 0.2rem; }
+  .social-strip-item { color: var(--muted) !important; font-size: 0.72rem; }
+  section.how .section-tag { color: var(--purple) !important; opacity: 1; }
+  #challengeModal { padding: 0.5rem; align-items: center; }
+  .modal-box { max-width: 100%; border-radius: 20px; max-height: 92vh; }
+  .modal-body { max-height: calc(92vh - 90px); overflow-y: hidden; }
+  .modal-subtitle { font-size: 1.14rem; color: #dda6ff; font-weight: 500; }
+}
 </style>
 </head>
 <body>
@@ -1720,7 +1742,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
   const ctx = canvas.getContext('2d');
 
   const STAR_COUNT = 350;
-  const SPEED = 0.4;         // base speed — gemächlich
+  const SPEED = window.innerWidth <= 768 ? 0.32 : 0.4;
   const MAX_DEPTH = 1500;
   const STREAK_LENGTH = 0.012; // motion blur multiplier
 
