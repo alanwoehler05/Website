@@ -1390,6 +1390,7 @@ footer {
 
 /* HERO */
 #bewertungen-page .hero {
+  height: auto !important;
   padding: 7.5rem 5% 4rem;
   background: var(--bg);
   text-align: center;
@@ -1405,6 +1406,11 @@ footer {
   width: 900px; height: 600px;
   background: radial-gradient(ellipse, rgba(169,89,255,0.08) 0%, transparent 70%);
   pointer-events: none;
+}
+
+#bewertungen-page .hero::after {
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(230,225,245,0.4));
 }
 
 #bewertungen-page .hero-inner { position: relative; z-index: 2; max-width: 780px; margin: 0 auto; }
